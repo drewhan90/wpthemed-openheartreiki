@@ -1,0 +1,643 @@
+@charset 'utf-8';
+
+@import 'settings';
+@import '../bower_components/foundation-sites/scss/foundation';
+@import '../bower_components/motion-ui/motion-ui';
+@import 'mixins';
+@import 'dropzone';
+
+@include foundation-global-styles;
+@include foundation-grid;
+// @include foundation-flex-grid;
+@include foundation-typography;
+@include foundation-button;
+@include foundation-forms;
+// @include foundation-range-input;
+@include foundation-accordion;
+@include foundation-accordion-menu;
+@include foundation-badge;
+@include foundation-breadcrumbs;
+@include foundation-button-group;
+@include foundation-callout;
+@include foundation-close-button;
+@include foundation-menu;
+@include foundation-menu-icon;
+@include foundation-drilldown-menu;
+@include foundation-dropdown;
+@include foundation-dropdown-menu;
+@include foundation-flex-video;
+@include foundation-label;
+@include foundation-media-object;
+@include foundation-off-canvas;
+@include foundation-orbit;
+@include foundation-pagination;
+@include foundation-progress-bar;
+// @include foundation-progress-element;
+// @include foundation-meter-element;
+@include foundation-slider;
+@include foundation-sticky;
+@include foundation-reveal;
+@include foundation-switch;
+@include foundation-table;
+@include foundation-tabs;
+@include foundation-thumbnail;
+@include foundation-title-bar;
+@include foundation-tooltip;
+@include foundation-top-bar;
+@include foundation-visibility-classes;
+@include foundation-float-classes;
+// @include foundation-flex-classes;
+
+@include motion-ui-transitions;
+@include motion-ui-animations;
+
+////////////
+/// BASE ///
+////////////
+
+@font-face {
+    font-family: 'mathletebulky';
+    src: url('fonts/mathlete_bulky_macroman/Mathlete-Bulky-webfont.eot');
+    src: url('fonts/mathlete_bulky_macroman/Mathlete-Bulky-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/mathlete_bulky_macroman/Mathlete-Bulky-webfont.woff') format('woff'),
+         url('fonts/mathlete_bulky_macroman/Mathlete-Bulky-webfont.ttf') format('truetype'),
+         url('fonts/mathlete_bulky_macroman/Mathlete-Bulky-webfont.svg#mathletebulky') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'bodoni';
+    src: url('fonts/bodoni/BodoniStd.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+input {
+    font-family: 'bodoni' !important;
+}
+h1 {
+	@include font-size(45);
+}
+h2,
+button {
+	@include font-size(36);
+}
+h3,
+label {
+	@include font-size(28);
+}
+h4 {
+	@include font-size(14);
+}
+p,
+.top-bar a,
+.side-nav a {
+	font-family: 'bodoni';
+	@include font-size(16);
+	/// add animation / transition
+}
+/// Page Content
+.container {
+	margin: 0 auto;
+	text-align: center;
+}
+/// Default Hide List style
+ul {
+	margin: 0;
+	list-style-type: none;
+}
+section {
+	padding: 60px 10px;
+}
+#contact section {
+	padding: 40px 10px;
+}
+.center-page {
+	max-width: 1260px;
+	margin: auto;
+}
+.pagination {
+	margin-top: 1rem;
+}
+
+///////////////
+/// BUTTONS ///
+///////////////
+
+footer.btn {
+	margin-bottom: 30px;
+}
+.btn {
+	padding: 10px 46px;
+	font-size: 2rem;
+	border-radius: 10px;
+
+	text-decoration: none;
+	cursor: pointer;
+}
+.primary.btn {
+	background-color: $secondary-color;
+	border: 1px solid $secondary-color;
+	color: $white;
+ 	/// add animation / transition
+}
+.secondary.btn {
+	background-color: $white;
+	border: 1px solid $white;
+	color: $secondary-color;
+	/// add animation / transition
+}
+.primary.btn:hover {
+	background-color: $white;
+	color: $secondary-color;
+}
+.secondary.btn:hover {
+	background-color: $secondary-color;
+	color: $white;
+}
+
+/////////////////////////
+/// DIVIDER & VECTORS ///
+/////////////////////////
+.static-img {
+	display: block;
+	margin: auto;
+	background-size: contain;
+	background-repeat: no-repeat;
+	text-indent: -9999px; /// hide html text
+}
+.container header > .divider {
+	background-image: url('../img/divider_top.png');
+}
+.container footer > .divider {
+	background-image: url('../img/divider_bottom.png');
+}
+.divider {
+	max-width: 190px;
+	height: 35px;
+}
+#index .services .learn.static-img {
+	background-image: url('../img/index/mandala_sm_vector01.png');	
+}
+#index .services .therapy.static-img {
+	background-image: url('../img/index/mandala_sm_vector02.png');
+}
+#index .services .yoga-women.static-img {
+	background-image: url('../img/index/mandala_sm_vector03.png');
+}
+#index .services .static-img {
+	max-width: 149px;
+	height: 149px;
+}
+
+/////////////////////////
+/// BACKGROUND IMAGES ///
+/////////////////////////
+
+#index section.services {
+	background: $white url('../img/reiki-treatment.jpg') no-repeat fixed center;
+	background-size: cover;
+}
+.secondary.solid-bg {
+	background-color: $secondary-color;
+}
+#index .page-header {
+    height: 100vh;
+    
+	background: $white url('../img/hero_bg.jpg') no-repeat center bottom;
+	background-size: cover;	
+}
+
+////////////////
+/// NAV BARS ///
+////////////////
+
+.title-bar {
+	padding: 10px 10px 0 10px;
+}
+
+.title-bar .logo {
+	float: right;
+	width: 33px;
+}
+
+.page-nav {
+	width: 100%;
+	height: 80px;
+	padding: 10px 10px 0 10px;
+}
+.page-nav .logo {
+	float: left;
+	width: 33px;
+}
+.page-nav .left.nav, 
+.page-nav .right.nav {
+	display: none;
+}
+.page-nav .menu {
+	float: right;
+	cursor: pointer;
+}
+.page-nav .menu > p {
+	display: inline-block;
+}
+.dropdown.nav {
+	width: 100%;
+	height: 100vh;
+	padding: 0 10px;
+	background: rgba(0,0,0,0.5);
+	text-align: center;
+	color: $black;
+}
+.dropdown.nav li a {
+	width: 100%;
+	font-size: 2em;
+	color: $white;
+	text-decoration: none;
+}
+.dropdown.nav li:hover {
+	background: rgba(0,0,0,0.8);
+}
+
+//////////////
+/// LAYOUT ///
+//////////////
+
+.container header {
+	padding-bottom: 50px;
+}
+.container footer {
+	padding-top: 50px;
+}
+.content article {
+	text-align: left; // align left article text
+}
+
+.btn-top {
+	position: fixed;
+	right: 30px;
+	top: 85%;
+}
+.btn-top span {
+	display: block;
+	margin-top: -11px;
+}
+.text-content {
+	text-align: left;
+}
+.content .img-wrap img {
+    border: 1px solid transparent;
+    border-radius: 10px
+}
+.content .img-wrap.horizontal {
+	width: 60%;
+	margin: auto;
+}
+.img-wrap + .intro{
+	margin-top: 50px;
+}
+.secondary a {
+	color: $white;
+}
+.orbit-slide a:hover {
+	color: $primary-color;
+	text-decoration: underline;
+}
+.orbit-slide a {
+	color: $secondary-color;
+}
+
+/// BACKGROUND IMAGES
+
+/// TOPBAR		
+.top-bar a {
+	font-weight: bold;
+	color: $primary-color;
+	text-transform: capitalize;
+}
+.top-bar {
+	max-width: 484px;
+	margin: auto;
+	padding-top: 20px;
+}
+.logo-wrapper {
+    position: relative; 
+}
+.logo-wrapper .logo {
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	left: 56%;
+	right: 50%;
+	top: -6px;
+	margin-left: -59px; 
+}
+.top-bar-left,
+.top-bar-right {
+	margin-top: 20px;
+}
+.curve-overlay {
+	width: 100vw;
+}
+/// RESPONSIVE MENU
+
+/// STICKY BAR
+.section-list {
+	max-width: 701px;
+	margin: auto;
+	//padding: 0 35px;
+	text-transform: capitalize;
+}
+.sticky-container {
+	top: 23px;
+}
+.sticky-container > .title-bar {
+    font-family: 'bodoni';
+	border-top: 1.5px solid $secondary-color;
+	background: $white;
+}
+.subMenu>li>a {
+    padding: 0.7rem 1.6rem;
+}
+/// POST
+.post-img {
+	border-radius: 50%;
+}
+.testimonials article,
+.learn article {
+	padding: 35px 55px;
+	background-color: $white;
+	border-radius: 10px;
+}
+.learn article {
+	text-align: center;
+}
+
+/// FOOTER
+#map {
+	width: 100%;
+	height: 304px;
+}
+footer .logo {
+	max-width: 87px;
+	height: 87px;
+}
+footer .contact {
+	margin-left: 0;
+}
+footer .contact li *{
+	display: inline;
+}
+footer .content {
+	padding: 20px;
+}
+/// INDEX SPECIFIC
+/// ABOUT SPECIFIC
+.mental-list {
+	text-align: right;
+}
+.physical-list {
+	text-align: left;
+	border-left: 2px solid $primary-color;
+}
+#about .list {
+	height: 360px;
+}
+/// BLOG SPECIFIC
+#blog .img-wrap {
+	max-height: 400px;
+	overflow: hidden;
+}
+#blog .post {
+	padding-right: 50px;
+	padding-bottom: 30px;
+	border-bottom: 1px solid $primary-color;
+	text-overflow: ellipsis; 
+}
+#blog .more-post {
+	padding: 40px 45px;
+}
+#blog .post:not(:first-child){
+	padding-top: 30px;
+}
+#blog .post img {
+	display: block;
+	position: relative;
+	max-width: 100%;
+	height: auto;
+	bottom: 100px;
+}
+#blog .post p,
+.side-nav li:not(.title) {
+	padding: 15px 0;
+}
+.post .post-text {
+	max-height: 130px;
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.more-post .post-text {
+	margin-top: 50px;
+}
+
+#blog .post .title {
+	margin: 0;
+}
+.side-nav .date {
+	margin: 0;
+}
+#blog .testimonials {
+	background-color: $secondary-color;
+}
+#blog .testimonials .title {
+	text-align: center;
+}
+#blog .testimonials p {
+	margin: 0;
+}
+/// CONTACT SPECIFIC
+.contact-form .primary-btn {
+	width: 100%;
+}
+.contact-form .end {
+	margin-bottom: 60px;
+}
+#contact .intro {
+	padding: 30px 0;
+}
+
+//////////////
+/// STATES ///
+//////////////
+.hidden {
+	display: none;
+}
+.menu .active>a {
+	background-color: transparent;
+	color: $secondary-color;
+}
+.top-bar a:hover {
+	color: $secondary-color;
+}
+.primary-btn:hover {
+	background-color: $white;
+	border: 2px solid $secondary-color;
+}
+.secondary-btn:hover {
+	background-color: $secondary-color;
+	border: 2px solid $white;
+}
+// Slide ins
+.come-in {
+  transform: translateY(150px);
+  animation: come-in 0.8s ease forwards;
+}
+.come-in:nth-child(odd) {
+  animation-duration: 0.6s; /* So they look staggered */
+}
+
+@keyframes come-in {
+  to { transform: translateY(0); }
+}
+/// MOBILE MEDIA SCREEN
+@include screen(mobile) {
+	// TOP BAR
+	.top-bar {
+		padding: 0;
+		background: $primary-color;
+	}
+	.top-bar-left,
+	.top-bar-right {
+		margin: 0;
+	}
+	.top-bar a {
+		color: $white;
+	}
+	.top-bar a:hover {
+		background: $white;
+	}
+	.testimonials .post {
+		margin-bottom: 20px;
+	}
+	.sticky-container {
+		top: 0;
+	}
+	// BLOG
+	#blog .post img {
+		bottom: 0;
+	}
+	#blog .post {
+		padding-right: 0;
+	}
+	.orbit-container {
+		overflow: visible;
+	}
+	.mental-list,
+	.physical-list {
+		text-align: center;
+	}
+	.physical-list {
+		border-top: 2px solid $primary-color;
+		border-left: none;
+	}
+	.aneesha .content .text-content {
+		margin-top: 50px;
+	}
+} 
+@include screen(tablet) {
+	.aneesha .content .text-content {
+		margin-top: 50px;
+	}
+}
+
+///////////////
+///// CMS /////
+///////////////
+.cms * {
+	font-family: 'bodoni';
+}
+.cms h2 {
+	@include font-size(36);
+}
+.cms label {
+	@include font-size(18);
+	text-transform: capitalize;
+}
+#dashboard .top-bar {
+	max-width: 100%;
+	padding-top: 0;
+	border: 2px solid $primary-color;
+}
+#dashboard .top-bar.edit {
+	border: none;
+}
+#dashboard .side-nav {
+	padding: 0;
+	height: 100vh;
+	border: 2px solid $primary-color;
+}
+#dashboard .menu a {
+	color : $primary-color;
+}
+#dashboard .menu a:hover {
+	background: $primary-color;
+	color : $secondary-color;
+}
+#dashboard section {
+	padding: 0;
+}
+.side-tabs {
+	position: fixed;
+	height: 100vh;
+	padding: 0;
+	border-right: 2px solid $secondary-color;
+}
+.side-tabs li {
+	padding: 20px 0;
+	text-align: center;
+	text-transform: capitalize;
+}
+.side-tabs li a {
+	display: block;
+}
+.side-tabs li:hover {
+	background-color: $secondary-color;
+	
+}
+.side-tabs li:hover a{
+	color: $white;
+}	
+.tab-content {
+	padding: 10px 50px;
+}
+.copy-url {
+	border: 1px solid $primary-color;
+	font-size: 10px;
+}
+.copy-url p {
+	font-size: 10px;
+}
+.edit-delete li {
+	display: inline;
+}
+
+
+// Default medium-gray color
+$medium-gray: #cacaca;
+// Default global padding
+$global-padding: 1rem;
+// Global value used for all elements that have a border radius.
+$global-radius: 3px;
+
+// Setting the form border color
+$form-border-color: $medium-gray;
+// Setting the form padding
+$form-padding: $global-padding;
+// Setting the form border radius
+$form-radius: $global-radius;
+
+.log-in-form {
+  border: 1px solid $form-border-color;
+  padding: $form-padding;
+  border-radius: $form-radius;
+}
