@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?> class="no-js">
 <head>
   <meta charset="<?php bloginfo('charset'); ?>">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -7,11 +7,10 @@
   <meta name="description" content="<?php bloginfo('description');?>">
   <title>Open Heart Reiki</title>
   <title><?php wp_title(''); ?><?php if(wp_title('', false)) { echo ' :'; } ?> <?php bloginfo('name'); ?></title>
-
-  <?php wp_head(); ?>
   <!--[if lt IE 9]> <script src="<?php echo get_template_directory_uri();?>/js/html5shiv.js"></script> <![endif]-->
+  <?php wp_head(); ?>
 </head>
-<body id="index">
+<body <?php body_class(); ?>>
   <header class="page-header">
     <div class="page-nav">
       <!-- LEFT NAV -->

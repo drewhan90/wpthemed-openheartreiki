@@ -1,0 +1,38 @@
+footer.btn {
+	margin-bottom: 30px;
+}
+.btn {
+	padding: 10px 46px;
+	font-size: 2rem;
+	border-radius: 10px;
+
+	text-decoration: none;
+	cursor: pointer;
+}
+.primary.btn {
+	background-color: $secondary-color;
+	border: 1px solid $secondary-color;
+	color: $white;
+ 	/// add animation / transition
+}
+.secondary.btn {
+	background-color: $white;
+	border: 1px solid $white;
+	color: $secondary-color;
+	/// add animation / transition
+}
+.primary.btn:hover {
+	background-color: $white;
+	color: $secondary-color;
+}
+.secondary.btn:hover {
+	background-color: $secondary-color;
+	color: $white;
+}
+.pagination {
+	margin-top: 1rem;
+}
+.center-page {
+	max-width: 1260px;
+	margin: auto;
+}
